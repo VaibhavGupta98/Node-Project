@@ -6,6 +6,9 @@ const cors = require('cors');
 
 const api = require('./server/Routes/api');
 const donatorApi = require('./server/Routes/donatorApi');
+const medicineApi = require('./server/Routes/medicineApi');
+const clothesApi = require('./server/Routes/clothesApi');
+const stationaryApi = require('./server/Routes/stationaryApi');
 
 const port = 3000;
 
@@ -22,6 +25,9 @@ app.use(cors());
 
 app.use('/api',api);
 app.use('/donatorApi',donatorApi);
+app.use('/medicineApi',medicineApi);
+app.use('/clothesApi',clothesApi);
+app.use('/stationaryApi',stationaryApi);
 
 app.get('*', function(req,res){
     res.sendFile(path.join(__dirname,'/dist/index.html'));
